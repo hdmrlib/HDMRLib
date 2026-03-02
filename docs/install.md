@@ -1,18 +1,8 @@
-# Installation
+# Installing HDMR-Lib
 
 ## Prerequisites
 
-Before installing HDMR-Lib, ensure you have the following installed:
-
 - **Python**: 3.8 or higher
-- **pip**: Package installer for Python (usually comes with Python)
-- **git**: Required for development installation
-
-### System Requirements
-
-- RAM: Minimum 2GB (more recommended for large datasets)
-- Storage: ~500MB for base installation + optional backends
-- OS: Linux, macOS, or Windows
 
 ## Quick Install
 
@@ -22,31 +12,16 @@ The easiest way to install HDMR-Lib is from PyPI:
 pip install hdmrlib
 ```
 
-## Installation Options
-
-### Stable Release from PyPI
-
-```bash
-pip install hdmrlib
-```
-
 This installs the latest stable version with NumPy as the default backend.
 
-### Development Installation
+## Cloning the github repository
 
-For developers who want to contribute or use the latest development version:
+Use this option if you want to work with the codebase directly (e.g., to experiment with the latest changes or to contribute).
 
+Clone the repository and move into it:
 ```bash
 git clone https://github.com/hdmrlib/HDMR-Lib.git
 cd HDMR-Lib
-pip install -e ".[dev]"
-```
-
-If your project does not define extras yet, use:
-
-```bash
-pip install -e .
-pip install -r requirements-dev.txt
 ```
 
 ## Optional Backends
@@ -62,7 +37,7 @@ PyTorch provides GPU acceleration and advanced tensor operations.
 **Installation**:
 
 ```bash
-pip install -r requirements-torch.txt
+pip install hdmrlib[torch]
 ```
 
 ### TensorFlow Backend
@@ -74,7 +49,13 @@ TensorFlow offers GPU support and is optimized for production environments.
 **Installation**:
 
 ```bash
-pip install -r requirements-tensorflow.txt
+pip install hdmrlib[tensorflow]
+```
+
+### All optional backends
+
+```bash
+pip install hdmrlib[all]
 ```
 
 ## Backend Selection
@@ -96,6 +77,17 @@ print(get_backend())
 - "torch" - Available after installing PyTorch backend
 - "tensorflow" - Available after installing TensorFlow backend
 
+
+### Development Installation
+
+For developers who want to contribute or use the latest development version:
+
+```bash
+git clone https://github.com/hdmrlib/HDMR-Lib.git
+cd HDMR-Lib
+pip install -e ".[dev]"
+```
+
 ## Troubleshooting
 
 ### Backend not available
@@ -108,3 +100,4 @@ If you get an error that a backend is not available:
 ### Installation issues
 
 For common installation issues and solutions, please check our [GitHub Issues](https://github.com/hdmrlib/HDMR-Lib/issues) or open a new issue with details about your system and error message.
+
