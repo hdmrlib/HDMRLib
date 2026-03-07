@@ -1,6 +1,6 @@
 # Quick Start
 
-A short introduction to HDMR-Lib showing the minimal workflow for getting started.
+A short introduction to HDMR-Lib demonstrating the minimal workflow for getting started.
 
 ## Basic usage pattern
 
@@ -30,7 +30,7 @@ components = model.components()
 In this example:
 
 - `X` is the input tensor
-- `EMPR(X, order=2)` creates an EMPR model with second-order approximation as the default setting
+- `EMPR(X, order=2)` ccreates an EMPR model with a second-order approximation
 - `reconstruct()` computes the approximation
 - `components()` returns the available decomposition components
 
@@ -46,20 +46,7 @@ You can retrieve only selected components by passing their keys:
 ```python
 selected = model.components(elements=[(0,), (1,), (0, 1)])
 ```
-
-## Backend selection
-
-HDMR-Lib supports multiple computational backends. In most cases, NumPy is the best starting point for first-time users.
-
-```python
-import hdmrlib as h
-
-h.set_backend("numpy")
-print(h.get_backend())
-print(h.available_backends())
-```
-
-The backend selector also accepts `"tf"` as an alias for TensorFlow.
+HDMR-Lib supports multiple computational backends such as NumPy, PyTorch, and TensorFlow. Backend selection is explained in the **Computational Backends** section.
 
 ## Using HDMR instead
 
@@ -76,18 +63,3 @@ approx = model.reconstruct()
 components = model.components()
 ```
 
-## Notes
-
-Both `EMPR` and `HDMR` expose the following commonly used attributes:
-
-- `dimensions`
-- `weights`
-- `support_vectors`
-
-For example:
-
-```python
-print(model.dimensions)
-print(model.weights)
-print(model.support_vectors)
-```
