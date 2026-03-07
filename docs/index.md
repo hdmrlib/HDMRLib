@@ -43,7 +43,7 @@ Go to API
 :hidden:
 
 install
-quickstart
+user_guide/index.md
 fundamentals
 backends
 api
