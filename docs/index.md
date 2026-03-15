@@ -45,7 +45,7 @@ Go to API
 install
 user_guide/index.md
 fundamentals
-backends
+examples
 api
 ```
 
