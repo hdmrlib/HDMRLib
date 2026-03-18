@@ -30,7 +30,7 @@ components = model.components()
 In this example:
 
 - `X` is the input tensor
-- `EMPR(X, order=2)` ccreates an EMPR model with a second-order approximation
+- `EMPR(X, order=2)` creates an EMPR model with a second-order approximation
 - `reconstruct()` computes the approximation
 - `components()` returns the available decomposition components
 
