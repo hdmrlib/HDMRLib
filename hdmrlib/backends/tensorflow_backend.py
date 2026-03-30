@@ -218,7 +218,7 @@ class TensorFlowBackend(BaseBackend):
             g0 = self.G
             for s, w in zip(self.support_vectors, self.weights):
                 g0 = tf.tensordot(g0, s, axes=[[0], [0]]) * w
-            return float(g0)
+            return float(tf.reshape(g0, []).numpy())
 
         def convert_g_to_string(self, dims):
             return 'g_' + ','.join(map(str, list(map(lambda x: x+1, dims))))
