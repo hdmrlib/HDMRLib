@@ -1,4 +1,4 @@
-# Prepare Data
+# Prepare Input Data
 
 ## Provide a Numeric Tensor
 
