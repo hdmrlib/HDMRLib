@@ -8,6 +8,7 @@ Prepare data → Run a decomposition → Inspect components → Reconstruct data
 
 ```{toctree}
 :maxdepth: 1
+:hidden:
 
 quick_start
 prepare_data
