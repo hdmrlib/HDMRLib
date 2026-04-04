@@ -27,7 +27,7 @@ This reconstructs `X` using only lower-order terms up to order 1.
 ## Select Components
 
 ```python
-selected = empr.components(elements=[(0,), (1,), (0, 1)])
+selected = empr.components(elements=["g_0", "g_1", "g_2", "g_1,2"])
 ```
 
 This returns only the requested components.
