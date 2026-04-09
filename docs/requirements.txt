@@ -4,3 +4,4 @@ pydata-sphinx-theme>=0.15
 sphinx-autodoc-typehints>=1.25
 sphinx-design
 sphinx-copybutton
+sphinx-gallery
