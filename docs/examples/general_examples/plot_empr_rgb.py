@@ -13,16 +13,8 @@ import numpy as np
 
 from hdmrlib import EMPR
 
-# Optional thumbnail for the gallery card
-# sphinx_gallery_thumbnail_path = "_static/examples/empr_rgb_image.png"
 
-# Point this to your RGB image inside the docs tree.
-image_path = (
-    Path(__file__).resolve().parents[2]
-    / "_static"
-    / "examples"
-    / "squirell.png"
-)
+image_path = Path("docs/_static/examples/squirell.png")
 
 # Load the image.
 X = plt.imread(image_path)
