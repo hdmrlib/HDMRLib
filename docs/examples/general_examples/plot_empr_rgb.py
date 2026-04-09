@@ -21,7 +21,7 @@ image_path = (
     Path(__file__).resolve().parents[2]
     / "_static"
     / "examples"
-    / "sample_rgb.png"
+    / "squirell.png"
 )
 
 # Load the image.
