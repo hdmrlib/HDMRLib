@@ -1,16 +1,9 @@
-"""
-EMPR on an RGB Image
-====================
-
-Load an RGB image as a 3D tensor, run EMPR, reconstruct the tensor, and compare
-the reconstruction with the original image.
-"""
-
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+from PIL import Image
 
 from hdmrlib import EMPR
 
@@ -33,51 +26,29 @@ if image_path is None:
         + "\n".join(str(p) for p in candidates)
     )
 
-X = plt.imread(image_path)
+# Load with PIL and resize properly
+img = Image.open(image_path).convert("RGB")
 
-if X.ndim == 3 and X.shape[2] == 4:
-    X = X[..., :3]
-
-if X.ndim != 3 or X.shape[2] != 3:
-    raise ValueError(f"Expected RGB image, got shape {X.shape!r}")
-
-X = np.asarray(X, dtype=np.float64)
-
-if X.max() > 1.0:
-    X = X / 255.0
-
-# Optional: reduce image size if it is too large for docs builds.
 max_size = 96
-if X.shape[0] > max_size or X.shape[1] > max_size:
-    step0 = max(1, X.shape[0] // max_size)
-    step1 = max(1, X.shape[1] // max_size)
-    X = X[::step0, ::step1, :]
+img.thumbnail((max_size, max_size), Image.Resampling.LANCZOS)
 
-# RGB image is a 3D tensor, so use order=3.
+X = np.asarray(img, dtype=np.float64) / 255.0
+
 empr = EMPR(X, order=3)
 X_reconstructed = np.asarray(empr.reconstruct(), dtype=np.float64)
-components = empr.components()
 
-# Clip for display.
 X_display = np.clip(X, 0.0, 1.0)
 X_reconstructed_display = np.clip(X_reconstructed, 0.0, 1.0)
 
-# Mean absolute error across RGB channels.
 error_map = np.mean(np.abs(X_display - X_reconstructed_display), axis=2)
-
-print("Image path:", image_path)
-print("Input shape:", X.shape)
-print("Reconstructed shape:", X_reconstructed.shape)
-print("Available component keys:", list(components.keys()))
-print("Mean absolute error:", float(np.mean(error_map)))
 
 fig, axes = plt.subplots(1, 3, figsize=(12, 4))
 
-axes[0].imshow(X_display)
+axes[0].imshow(X_display, interpolation="bilinear")
 axes[0].set_title("Original image")
 axes[0].axis("off")
 
-axes[1].imshow(X_reconstructed_display)
+axes[1].imshow(X_reconstructed_display, interpolation="bilinear")
 axes[1].set_title("EMPR reconstruction (order=3)")
 axes[1].axis("off")
 
