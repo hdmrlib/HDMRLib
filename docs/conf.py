@@ -17,7 +17,6 @@ extensions = [
     "sphinx.ext.intersphinx",
     "myst_parser",
     "sphinx.ext.mathjax",
-    "sphinx_gallery.gen_gallery",
     "sphinx_autodoc_typehints",
     "sphinx_design",
     "sphinx_copybutton",
@@ -63,21 +62,4 @@ myst_enable_extensions = ["colon_fence", "deflist", "fieldlist"]
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
     "numpy": ("https://numpy.org/doc/stable", None),
-}
-
-sphinx_gallery_conf = {
-    "examples_dirs": [
-        "examples/general_examples",
-        "examples/decomposition_workflows",
-        "examples/research_examples",
-    ],
-    "gallery_dirs": [
-        "auto_examples/general_examples",
-        "auto_examples/decomposition_workflows",
-        "auto_examples/research_examples",
-    ],
-    "filename_pattern": r"plot_",
-    "within_subsection_order": "FileNameSortKey",
-    "nested_sections": True,
-    "thumbnail_size": (320, 220),
 }
