@@ -1,3 +1,11 @@
+"""
+EMPR on an RGB Image
+====================
+
+Load an RGB image as a 3D tensor, run EMPR, reconstruct the tensor, and compare
+the reconstruction with the original image.
+"""
+
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -26,21 +34,32 @@ if image_path is None:
         + "\n".join(str(p) for p in candidates)
     )
 
-# Load with PIL and resize properly
+# Load image with PIL so resizing is smooth and the original display looks clean.
 img = Image.open(image_path).convert("RGB")
 
+# Keep the example lightweight for docs builds.
 max_size = 96
 img.thumbnail((max_size, max_size), Image.Resampling.LANCZOS)
 
 X = np.asarray(img, dtype=np.float64) / 255.0
 
+# RGB image is a 3D tensor, so use order=3.
 empr = EMPR(X, order=3)
 X_reconstructed = np.asarray(empr.reconstruct(), dtype=np.float64)
+components = empr.components()
 
+# Clip for display.
 X_display = np.clip(X, 0.0, 1.0)
 X_reconstructed_display = np.clip(X_reconstructed, 0.0, 1.0)
 
+# Mean absolute error across RGB channels.
 error_map = np.mean(np.abs(X_display - X_reconstructed_display), axis=2)
+
+print("Image path:", image_path)
+print("Input shape:", X.shape)
+print("Reconstructed shape:", X_reconstructed.shape)
+print("Available component keys:", list(components.keys()))
+print("Mean absolute error:", float(np.mean(error_map)))
 
 fig, axes = plt.subplots(1, 3, figsize=(12, 4))
 
