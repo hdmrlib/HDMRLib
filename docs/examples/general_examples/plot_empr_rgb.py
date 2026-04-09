@@ -14,23 +14,32 @@ import numpy as np
 from hdmrlib import EMPR
 
 
-image_path = Path("docs/_static/examples/squirell.png")
+candidates = [
+    Path(os.environ.get("GITHUB_WORKSPACE", "")) / "docs" / "_static" / "examples" / "squirell.png",
+    Path("docs/_static/examples/squirell.png"),
+    Path("_static/examples/squirell.png"),
+]
 
-# Load the image.
+image_path = None
+for candidate in candidates:
+    if str(candidate) and candidate.exists():
+        image_path = candidate
+        break
+
+if image_path is None:
+    raise FileNotFoundError(
+        "Could not find squirell.png. Checked:\n"
+        + "\n".join(str(p) for p in candidates)
+    )
+
 X = plt.imread(image_path)
 
-# If the PNG has an alpha channel, drop it.
 if X.ndim == 3 and X.shape[2] == 4:
     X = X[..., :3]
 
-# This example is intended for RGB images.
 if X.ndim != 3 or X.shape[2] != 3:
-    raise ValueError(
-        "Expected an RGB image with shape (height, width, 3). "
-        f"Got shape {X.shape!r}."
-    )
+    raise ValueError(f"Expected RGB image, got shape {X.shape!r}")
 
-# Convert to float64 for the library.
 X = np.asarray(X, dtype=np.float64)
 
 # Optional: reduce image size if it is too large for docs builds.
