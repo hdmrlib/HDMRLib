@@ -38,7 +38,7 @@ HDMR-Lib currently supports:
 install
 user_guide/index
 fundamentals
-examples/index
+auto_examples/index
 api
 ```
 

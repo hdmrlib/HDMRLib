@@ -61,16 +61,8 @@ html_theme_options = {
 myst_enable_extensions = ["colon_fence", "deflist", "fieldlist"]
 
 sphinx_gallery_conf = {
-    "examples_dirs": [
-        "examples/general_examples",
-        "examples/decomposition_workflows",
-        "examples/research_examples",
-    ],
-    "gallery_dirs": [
-        "auto_examples/general_examples",
-        "auto_examples/decomposition_workflows",
-        "auto_examples/research_examples",
-    ],
+    "examples_dirs": "examples",
+    "gallery_dirs": "auto_examples",
     "filename_pattern": r"plot_",
     "within_subsection_order": "FileNameSortKey",
     "nested_sections": True,
