@@ -1,5 +1,5 @@
 """
-HDMR on a 2D Tensor
+HDMR on a 2D Tensor with Interaction Terms
 ===================
 
 Run HDMR on a structured 2D tensor and inspect the resulting additive and
