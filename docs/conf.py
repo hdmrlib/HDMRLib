@@ -64,6 +64,11 @@ sphinx_gallery_conf = {
     "examples_dirs": "examples",
     "gallery_dirs": "auto_examples",
     "filename_pattern": r"plot_",
+    "subsection_order": [
+        "examples/general_examples",
+        "examples/decomposition_examples",
+        "examples/research_examples",
+    ],
     "within_subsection_order": "FileNameSortKey",
     "nested_sections": True,
     "thumbnail_size": (320, 220),

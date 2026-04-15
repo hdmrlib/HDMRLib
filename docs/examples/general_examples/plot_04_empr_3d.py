@@ -1,5 +1,5 @@
 """
-EMPR on an RGB Image
+EMPR on an 3D Tensor
 ====================
 
 Load an RGB image as a 3D tensor, run EMPR, reconstruct the tensor, and compare
