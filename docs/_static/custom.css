@@ -36,18 +36,17 @@
 
 .bd-header .navbar-header-items__end {
   justify-content: flex-end !important;
-  gap: 0.8rem;
+  gap: 0.7rem;
   margin-left: auto;
   flex: 0 0 auto;
-  min-width: 0;
 }
 
 /* Brand */
 .bd-header .navbar-brand {
   display: inline-flex !important;
   align-items: center;
-  gap: 0.8rem;
-  margin-right: 0.8rem;
+  gap: 0.75rem;
+  margin-right: 1rem;
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -76,9 +75,9 @@
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   align-items: center !important;
-  gap: 0.15rem;
+  gap: 0.2rem;
   margin: 0;
-  margin-left: 0.35rem; /* HDMR-Lib ile Installation arasına nefes */
+  margin-left: 0.6rem;
   min-width: 0;
 }
 
@@ -101,51 +100,21 @@
   color: #304b72 !important;
 }
 
-/* Search wrapper */
+/* Search: real input only, no fake label */
 .bd-search {
-  margin-right: 0.25rem;
+  margin-right: 0.2rem;
   flex-shrink: 0;
 }
 
-/* Search field smaller + rounded, not boxy */
 .bd-search .form-control,
 .bd-search input {
-  min-width: 150px;
-  width: 150px;
-  height: 42px;
+  width: 170px;
+  min-width: 170px;
+  height: 40px;
   border-radius: 999px !important;
   border: 1px solid #d6dbe3 !important;
   box-shadow: none !important;
-  font-size: 0.96rem;
-  padding-left: 2.5rem;
-  padding-right: 0.9rem;
-}
-
-/* Placeholder shorter-looking */
-.bd-search .form-control::placeholder,
-.bd-search input::placeholder {
-  color: transparent;
-}
-
-/* Add our own short label visually */
-.bd-search {
-  position: relative;
-}
-
-.bd-search::after {
-  content: "Search";
-  position: absolute;
-  left: 2.8rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #6c7f9d;
-  font-size: 0.96rem;
-  pointer-events: none;
-}
-
-/* Keep text readable when focused */
-.bd-search:focus-within::after {
-  display: none;
+  font-size: 0.95rem;
 }
 
 /* Hide shortcut hints */
@@ -156,18 +125,18 @@ kbd.kbd-shortcut {
   display: none !important;
 }
 
-/* Hide duplicated search button if present */
+/* If a duplicate search button is rendered, hide only the button version */
 .search-button__button {
   display: none !important;
 }
 
 /* Icon links */
-.navbar-icon-links {
+.navbar-icon-links,
+.bd-header .navbar-icon-links {
   display: flex !important;
   align-items: center !important;
   gap: 0.45rem;
   flex-wrap: nowrap !important;
-  white-space: nowrap;
 }
 
 .navbar-icon-links a,
@@ -183,7 +152,7 @@ kbd.kbd-shortcut {
   color: #304b72 !important;
 }
 
-/* Hide any theme switch leftovers */
+/* Hide theme switch leftovers */
 .theme-switch-button,
 button.theme-switch-button,
 .navbar-theme-button {
@@ -198,14 +167,14 @@ button.theme-switch-button,
   flex-shrink: 0;
 }
 
-/* Medium screens: hide nav before wrapping */
+/* Hide nav before it wraps badly */
 @media (max-width: 1280px) {
   .bd-header .navbar-nav {
     display: none !important;
   }
 }
 
-/* Smaller screens: hide right-side icons too, keep only search + hamburger */
+/* Hide right-side icon links on smaller screens */
 @media (max-width: 980px) {
   .navbar-icon-links,
   .bd-header .navbar-icon-links {
@@ -214,13 +183,12 @@ button.theme-switch-button,
 
   .bd-search .form-control,
   .bd-search input {
-    min-width: 132px;
-    width: 132px;
-    height: 40px;
+    width: 140px;
+    min-width: 140px;
   }
 }
 
-/* Very small screens: hide search too, keep layout clean */
+/* Hide search too on very small screens */
 @media (max-width: 760px) {
   .bd-search {
     display: none !important;
