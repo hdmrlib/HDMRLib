@@ -1,59 +1,114 @@
-# HDMR-Lib
+# Installation
 
-**A unified Python library for HDMR and EMPR**
+## Prerequisites
 
-**HDMR-Lib** provides a consistent interface for decomposing high-dimensional tensors and multivariate functions into interpretable lower-order components. It supports both **High-Dimensional Model Representation (HDMR)** and **Enhanced Multivariate Products Representation (EMPR)** across **NumPy**, **PyTorch**, and **TensorFlow** backends.
+- Python 3.8 or higher
 
-```{image} _static/hdmrlib-hero.svg
-:alt: HDMR-Lib overview illustration
-:width: 85%
-:align: center
+---
+
+## Install from PyPI
+
+Install the base package with NumPy backend:
+
+```bash
+pip install hdmrlib
 ```
 
-## Interpretable decomposition for high-dimensional structure
+---
 
-HDMR-Lib is designed for research and scientific computing workflows that require decomposition, approximation, and interaction analysis in high-dimensional settings. The library makes it easier to compute lower-order representations, inspect component terms, and work within a unified backend-flexible API.
+## Optional Backends
 
-## Core capabilities
+HDMR-Lib supports multiple computational backends. You can install them via extras:
 
-### HDMR and EMPR in one interface
-Work with classical HDMR and EMPR-based formulations through a consistent Python workflow.
+### PyTorch backend
 
-### Lower-order component analysis
-Decompose tensors and multivariate functions into interpretable lower-order terms for inspection and analysis.
+```bash
+pip install hdmrlib[torch]
+```
 
-### Multi-backend execution
-Use the same workflow across NumPy, PyTorch, and TensorFlow, including tensor-based and GPU-enabled pipelines where supported.
+### TensorFlow backend
 
-## What is HDMR-Lib?
+```bash
+pip install hdmrlib[tensorflow]
+```
 
-HDMR-Lib is a research-oriented library for studying high-dimensional structure through lower-order representations. It supports decomposition, reconstruction, and component extraction for tensor-valued data and multivariate functions, making it suitable for experimentation, analysis, and scientific software workflows.
+### All backends
 
-The library is particularly useful when interaction structure, approximation quality, and computational flexibility are central to the problem setting.
+```bash
+pip install hdmrlib[all]
+```
 
-## Supported backends
+---
 
-HDMR-Lib currently supports the following computational backends:
+## Install from Source
 
-- **NumPy** for standard array-based workflows
-- **PyTorch** for tensor computation and GPU-enabled pipelines
-- **TensorFlow** for TensorFlow-based numerical workflows
+Use this option if you want to work with the latest version of the codebase:
 
-## Explore the documentation
+```bash
+git clone https://github.com/hdmrlib/HDMR-Lib.git
+cd HDMR-Lib
+pip install -e .
+```
 
-- Start with the **Installation** guide to set up the library
-- Visit the **User Guide** for the main workflow
-- See **Fundamentals** for the underlying decomposition concepts
-- Browse the **Examples** gallery for practical use cases
-- Use the **API Reference** for detailed documentation
+---
 
-```{toctree}
-:maxdepth: 2
-:hidden:
+## Development Installation
 
-install
-user_guide/index
-fundamentals
-auto_examples/index
-api
+For development and contributing:
+
+```bash
+pip install -e ".[dev]"
+```
+
+---
+
+## Verify Installation
+
+You can verify the installation and backend setup:
+
+```python
+from hdmrlib import EMPR
+
+# Create sample data
+import numpy as np
+X = np.random.rand(10, 10)
+
+# Run decomposition
+empr = EMPR(X, order=2)
+components = empr.components()
+
+print(type(components))
+```
+---
+
+## Troubleshooting
+
+### Backend not found
+
+Ensure the backend is installed:
+
+```bash
+pip install hdmrlib[torch]
+```
+
+or
+
+```bash
+pip install hdmrlib[tensorflow]
+```
+
+---
+
+### Import errors
+
+Check installation:
+
+```bash
+pip show hdmrlib
+```
+
+If needed, reinstall:
+
+```bash
+pip install --upgrade --force-reinstall hdmrlib
 ```
