@@ -27,6 +27,7 @@ Use this section to prepare data, run decompositions, inspect components, and re
 :hidden:
 
 quick_start
+workflow_overview
 prepare_data
 run_a_decomposition
 inspect_components
