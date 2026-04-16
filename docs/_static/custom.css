@@ -58,14 +58,14 @@
   max-height: 54px;
 }
 
-/* Brand text: bigger but lighter */
+/* Brand text */
 .bd-header .navbar-brand,
 .bd-header .navbar-brand .title,
 .bd-header .navbar-brand__title,
 .navbar-brand p {
   font-size: 1.18rem;
   font-weight: 600;
-  color: #355885 !important;
+  color: #304b72 !important;
   margin-bottom: 0 !important;
   white-space: nowrap;
   letter-spacing: -0.01em;
@@ -95,8 +95,8 @@
 
 .bd-header .navbar-nav .nav-link {
   font-size: 1.12rem;
-  font-weight: 520;
-  color: #6a7f9f !important;
+  font-weight: 500;
+  color: #304b72 !important;
   padding: 0.28rem 0.6rem;
   white-space: nowrap;
   letter-spacing: -0.01em;
@@ -105,7 +105,7 @@
 .bd-header .navbar-nav .nav-link:hover,
 .bd-header .navbar-nav .current > .nav-link,
 .bd-header .navbar-nav .active > .nav-link {
-  color: #355885 !important;
+  color: #304b72 !important;
 }
 
 /* Search */
