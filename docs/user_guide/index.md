@@ -4,37 +4,17 @@ Use this section to prepare data, run decompositions, inspect components, and re
 
 ## Main workflow
 
-::::{grid} 1 2 2 2
-:gutter: 3
+1. [**Prepare Input Data**](prepare_data)  
+   Format tensors, choose a backend, and validate input assumptions.
 
-:::{grid-item-card} Prepare data
-Format tensors, choose a backend, and validate input assumptions.
+2. [**Run a Decomposition**](run_a_decomposition)  
+   Compute HDMR or EMPR representations through the main workflow.
 
-+++
-[Prepare Input Data](prepare_data)
-:::
+3. [**Inspect Components**](inspect_components)  
+   Examine lower-order terms and interaction structure.
 
-:::{grid-item-card} Run decomposition
-Compute HDMR or EMPR representations through the main workflow.
-
-+++
-[Run a Decomposition](run_a_decomposition)
-:::
-
-:::{grid-item-card} Inspect components
-Examine lower-order terms and interaction structure.
-
-+++
-[Inspect Components](inspect_components)
-:::
-
-:::{grid-item-card} Reconstruct data
-Build approximations from selected component orders.
-
-+++
-[Reconstruct Data](reconstruct_data)
-:::
-::::
+4. [**Reconstruct Data**](reconstruct_data)  
+   Build approximations from selected component orders.
 
 ## Additional topics
 
