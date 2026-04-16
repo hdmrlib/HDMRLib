@@ -27,7 +27,7 @@ empr = EMPR(X, order=2)
 orders = [0, 1, 2]
 reconstructions = [np.asarray(empr.reconstruct(order=o), dtype=np.float64) for o in orders]
 mae_values = [float(np.mean(np.abs(X - Xr))) for Xr in reconstructions]
-rmse_values = [float(np.sqrt(np.mean((X - Xr) ** 2))) for Xr in reconstructions)]
+rmse_values = [float(np.sqrt(np.mean((X - Xr) ** 2))) for Xr in reconstructions]
 
 print("Orders:", orders)
 print("MAE by order:", mae_values)
