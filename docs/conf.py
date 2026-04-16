@@ -32,6 +32,7 @@ autodoc_mock_imports = ["torch", "tensorflow"]
 html_theme = "pydata_sphinx_theme"
 
 html_static_path = ["_static"]
+html_js_files = ["custom.js"]
 html_css_files = ["custom.css"]
 html_logo = "_static/logo.jpg"
 html_favicon = "_static/logo.jpg"
