@@ -63,8 +63,8 @@
 .bd-header .navbar-brand .title,
 .bd-header .navbar-brand__title,
 .navbar-brand p {
-  font-size: 1.15rem;
-  font-weight: 600;
+  font-size: 1.22rem;
+  font-weight: 700;
   color: #304b72 !important;
   margin-bottom: 0 !important;
   white-space: nowrap;
@@ -94,8 +94,8 @@
 }
 
 .bd-header .navbar-nav .nav-link {
-  font-size: 1rem;
-  font-weight: 550;
+  font-size: 1.14rem;
+  font-weight: 650;
   color: #4f6487 !important;
   padding: 0.3rem 0.55rem;
   white-space: nowrap;
@@ -219,7 +219,7 @@ button.theme-switch-button,
   .bd-header .navbar-brand .title,
   .bd-header .navbar-brand__title,
   .navbar-brand p {
-    font-size: 1.05rem;
+    font-size: 1.08rem;
   }
 }
 

@@ -47,7 +47,7 @@ html_theme_options = {
     "navbar_start": ["navbar-logo", "navbar-nav"],
     "navbar_center": [],
     "navbar_end": ["search-field", "navbar-icon-links"],
-    "secondary_sidebar_items": ["page-toc", "edit-this-page", "sourcelink"],
+    "secondary_sidebar_items": ["edit-this-page", "sourcelink"],
     "show_prev_next": True,
     "icon_links": [
         {
