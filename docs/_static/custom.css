@@ -503,6 +503,18 @@ label.secondary-toggle {
   display: none !important;
 }
 
+/* Hide Show Source / Edit buttons in the secondary sidebar */
+.editthispage,
+.editthispage a,
+.bd-sidebar-secondary .tocsection,
+.bd-sidebar-secondary .theme-switch-button,
+.bd-sidebar-secondary .sourcelink,
+.bd-sidebar-secondary .editthispage,
+a[href*="_sources/"],
+a[href$=".md.txt"],
+a[href$=".rst.txt"] {
+  display: none !important;
+}
 /* =========================
    Responsive
 ========================= */
