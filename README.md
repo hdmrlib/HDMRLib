@@ -104,7 +104,7 @@ If you use **HDMRLib** in academic work, please cite the associated software or 
 ```bibtex
 @software{hdmrlib,
   title = {HDMRLib: A Python Library for HDMR and EMPR},
-  author = {Pınar Yalçın Güler and Muhammed Enis Şen and Buğra Eyidoğan},
+  author = {Pınar Yalçın Güler and Muhammed Enis Şen and Buğra Eyidoğan, and Süha Tuna},
   year = {2026},
   url = {https://github.com/hdmrlib/HDMRLib}
 }
